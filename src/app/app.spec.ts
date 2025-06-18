@@ -22,4 +22,14 @@ describe('App', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, TimeDisplay');
   });
+
+  it('should render login form', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('Welcome');
+    expect(compiled.textContent).toContain('Username:');
+    expect(compiled.textContent).toContain('Password:');
+    expect(compiled.textContent).toContain('Log In');
+  });
 });
