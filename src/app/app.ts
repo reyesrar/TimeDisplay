@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { BarPortraitComponent } from './bar-portrait.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, BarPortraitComponent],
   template: `
     <div *ngIf="!authenticated; else mainApp" class="auth-container">
-      <h1>Welcome to TimeDisplay</h1>
       <div *ngIf="showLogin; else registerForm">
         <form (ngSubmit)="login()" #loginForm="ngForm">
           <label>
@@ -47,11 +47,18 @@ import { CommonModule } from '@angular/common';
     </div>
     <ng-template #mainApp>
       <div class="main-app">
-        <h2>Welcome, {{ currentUser }}!</h2>
-        <button (click)="logout()">Log out</button>
+        <select class="display-select" [(ngModel)]="selectedDisplay">
+          <option disabled [value]="''">Select a time display</option>
+          <option value="bar-portrait">Bar Portrait</option>
+        </select>
+        <ng-container [ngSwitch]="selectedDisplay">
+          <bar-portrait *ngSwitchCase="'bar-portrait'"></bar-portrait>
+        </ng-container>
+        <button class="logout-btn" (click)="logout()">Log out</button>
       </div>
     </ng-template>
-  `
+  `,
+  styleUrl: './app.css'
 })
 export class App {
   showLogin = true;
@@ -62,6 +69,7 @@ export class App {
   message = '';
   authenticated = false;
   currentUser = '';
+  selectedDisplay = '';
 
   toggleForm(event: Event) {
     event.preventDefault();
