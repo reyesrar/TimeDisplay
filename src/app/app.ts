@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BarPortraitComponent } from './bar-portrait.component';
+import { FishTankComponent } from './fish-tank.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule, BarPortraitComponent],
+  imports: [CommonModule, FormsModule, BarPortraitComponent, FishTankComponent],
   template: `
     <div *ngIf="!authenticated; else mainApp" class="auth-container">
       <div *ngIf="showLogin; else registerForm">
@@ -50,9 +51,11 @@ import { BarPortraitComponent } from './bar-portrait.component';
         <select class="display-select" [(ngModel)]="selectedDisplay">
           <option disabled [value]="''">Select a time display</option>
           <option value="bar-portrait">Bar Portrait</option>
+          <option value="fish-tank">Fish Tank</option>
         </select>
         <ng-container [ngSwitch]="selectedDisplay">
           <bar-portrait *ngSwitchCase="'bar-portrait'"></bar-portrait>
+          <fish-tank *ngSwitchCase="'fish-tank'"></fish-tank>
         </ng-container>
         <button class="logout-btn" (click)="logout()">Log out</button>
       </div>
