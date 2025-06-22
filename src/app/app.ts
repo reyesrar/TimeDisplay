@@ -3,11 +3,18 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BarPortraitComponent } from './bar-portrait.component';
 import { FishTankComponent } from './fish-tank.component';
+import { DesktopTimeDisplayComponent } from './desktop-time-display.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule, BarPortraitComponent, FishTankComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    BarPortraitComponent,
+    FishTankComponent,
+    DesktopTimeDisplayComponent,
+  ],
   template: `
     <div *ngIf="!authenticated; else mainApp" class="auth-container">
       <div *ngIf="showLogin; else registerForm">
@@ -52,10 +59,12 @@ import { FishTankComponent } from './fish-tank.component';
           <option disabled [value]="''">Select a time display</option>
           <option value="bar-portrait">Bar Portrait</option>
           <option value="fish-tank">Fish Tank</option>
+          <option value="desktop-time">Computer Desktop</option>
         </select>
         <ng-container [ngSwitch]="selectedDisplay">
           <bar-portrait *ngSwitchCase="'bar-portrait'"></bar-portrait>
           <fish-tank *ngSwitchCase="'fish-tank'"></fish-tank>
+          <desktop-time-display *ngSwitchCase="'desktop-time'"></desktop-time-display>
         </ng-container>
         <button class="logout-btn" (click)="logout()">Log out</button>
       </div>
