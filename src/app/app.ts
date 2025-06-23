@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { BarPortraitComponent } from './bar-portrait.component';
 import { FishTankComponent } from './fish-tank.component';
 import { DesktopTimeDisplayComponent } from './desktop-time-display.component';
+import { BinaryLedsComponent } from './binary-leds.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { DesktopTimeDisplayComponent } from './desktop-time-display.component';
     BarPortraitComponent,
     FishTankComponent,
     DesktopTimeDisplayComponent,
+    BinaryLedsComponent,
   ],
   template: `
     <div *ngIf="!authenticated; else mainApp" class="auth-container">
@@ -60,11 +62,13 @@ import { DesktopTimeDisplayComponent } from './desktop-time-display.component';
           <option value="bar-portrait">Bar Portrait</option>
           <option value="fish-tank">Fish Tank</option>
           <option value="desktop-time">Computer Desktop</option>
+          <option value="binary-leds">Binary LEDs</option>
         </select>
         <ng-container [ngSwitch]="selectedDisplay">
           <bar-portrait *ngSwitchCase="'bar-portrait'"></bar-portrait>
           <fish-tank *ngSwitchCase="'fish-tank'"></fish-tank>
           <desktop-time-display *ngSwitchCase="'desktop-time'"></desktop-time-display>
+          <binary-leds *ngSwitchCase="'binary-leds'"></binary-leds>
         </ng-container>
         <button class="logout-btn" (click)="logout()">Log out</button>
       </div>

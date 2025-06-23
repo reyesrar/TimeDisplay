@@ -457,3 +457,78 @@
   height: 2.5rem;
   align-self: flex-end;
 }
+
+.binary-leds-controls {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+.binary-leds-controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  font-weight: 500;
+  align-items: center;
+}
+.binary-leds-controls input[type="range"] {
+  width: 120px;
+  margin: 0.5rem 0;
+}
+.binary-leds-controls span {
+  margin-top: 0.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.binary-leds-controls button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #4f46e5;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  height: 2.5rem;
+  align-self: flex-end;
+}
+
+.binary-leds-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.binary-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.binary-label {
+  min-width: 70px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: right;
+  margin-right: 1.2rem;
+}
+
+.led {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  border: 2px solid #b3b3b3;
+  margin: 0 0.15rem;
+  box-shadow: 0 2px 8px #0001;
+  transition: background 0.3s, box-shadow 0.3s;
+  display: inline-block;
+}
+.led.on {
+  background: #4f46e5;
+  box-shadow: 0 2px 16px #4f46e588;
+  border-color: #4f46e5;
+}
