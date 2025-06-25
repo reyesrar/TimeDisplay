@@ -6,6 +6,7 @@ import { FishTankComponent } from './fish-tank.component';
 import { DesktopTimeDisplayComponent } from './desktop-time-display.component';
 import { BinaryLedsComponent } from './binary-leds.component';
 import { FlowerClockComponent } from './flower-clock.component';
+import { MagicBookComponent } from './magic-book.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { FlowerClockComponent } from './flower-clock.component';
     DesktopTimeDisplayComponent,
     BinaryLedsComponent,
     FlowerClockComponent,
+    MagicBookComponent,
   ],
   template: `
     <div *ngIf="!authenticated; else mainApp" class="auth-container">
@@ -66,6 +68,7 @@ import { FlowerClockComponent } from './flower-clock.component';
           <option value="desktop-time">Computer Desktop</option>
           <option value="binary-leds">Binary LEDs</option>
           <option value="flower-clock">Flower Clock</option>
+          <option value="magic-book">Magic Book</option>
         </select>
         <ng-container [ngSwitch]="selectedDisplay">
           <bar-portrait *ngSwitchCase="'bar-portrait'"></bar-portrait>
@@ -73,6 +76,7 @@ import { FlowerClockComponent } from './flower-clock.component';
           <desktop-time-display *ngSwitchCase="'desktop-time'"></desktop-time-display>
           <binary-leds *ngSwitchCase="'binary-leds'"></binary-leds>
           <flower-clock *ngSwitchCase="'flower-clock'"></flower-clock>
+          <magic-book *ngSwitchCase="'magic-book'"></magic-book>
         </ng-container>
         <button class="logout-btn" (click)="logout()">Log out</button>
       </div>
