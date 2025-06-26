@@ -8,6 +8,7 @@ import { BinaryLedsComponent } from './binary-leds.component';
 import { FlowerClockComponent } from './flower-clock.component';
 import { MagicBookComponent } from './magic-book.component';
 import { TvClockComponent } from './tv-clock.component';
+import { BookshelfClockComponent } from './bookshelf-clock.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { TvClockComponent } from './tv-clock.component';
     FlowerClockComponent,
     MagicBookComponent,
     TvClockComponent,
+    BookshelfClockComponent,
   ],
   template: `
     <div *ngIf="!authenticated; else mainApp" class="auth-container">
@@ -72,6 +74,7 @@ import { TvClockComponent } from './tv-clock.component';
           <option value="flower-clock">Flower Clock</option>
           <option value="magic-book">Magic Book</option>
           <option value="tv-clock">TV Clock</option>
+          <option value="bookshelf-clock">Bookshelf Clock</option>
         </select>
         <ng-container [ngSwitch]="selectedDisplay">
           <bar-portrait *ngSwitchCase="'bar-portrait'"></bar-portrait>
@@ -81,6 +84,7 @@ import { TvClockComponent } from './tv-clock.component';
           <flower-clock *ngSwitchCase="'flower-clock'"></flower-clock>
           <magic-book *ngSwitchCase="'magic-book'"></magic-book>
           <tv-clock *ngSwitchCase="'tv-clock'"></tv-clock>
+          <bookshelf-clock *ngSwitchCase="'bookshelf-clock'"></bookshelf-clock>
         </ng-container>
         <button class="logout-btn" (click)="logout()">Log out</button>
       </div>
