@@ -26,17 +26,20 @@ import { FormsModule } from '@angular/forms';
       <button type="button" (click)="resetToSystemTime()">Reset</button>
     </div>
     <div class="fish-tank-container">
-      <div class="fish-tank-water">
-        <div class="fish-tank-filter">
-          <div class="bubble" *ngFor="let b of bubbles" [style.bottom.px]="b.y"></div>
-        </div>
-        <div class="fish" [style.left.%]="fishX" [class.flipped]="fishFlipped"></div>
-        <div class="algae" [style.height.%]="algaeHeight"></div>
-        <div class="stones-row">
-          <div class="stone" *ngFor="let s of stones"></div>
-        </div>
-        <div class="gravel"></div>
+      <div class="fish-tank-water"></div>
+      <div class="fish-tank-filter"></div>
+      <div
+        *ngFor="let a of algaeArray; let i = index"
+        class="algae"
+        [style.left.%]="algaeLeft(i)"
+        [style.height.px]="algaeHeight"
+        [style.display]="i < displayHours ? 'block' : 'none'"
+      ></div>
+      <div class="fish" [style.left.%]="fishX" [class.flipped]="fishFlipped"></div>
+      <div class="stones-row">
+        <div class="stone" *ngFor="let s of stones"></div>
       </div>
+      <div class="gravel"></div>
     </div>
   `,
   styleUrls: ['./app.css']
@@ -45,7 +48,8 @@ export class FishTankComponent implements OnInit, OnDestroy {
   bubbles: {x: number, y: number, t: number}[] = [];
   fishX = 0;
   fishFlipped = false;
-  algaeHeight = 10;
+  algaeArray = Array.from({ length: 24 });
+  algaeHeight = 80;
   private intervalId: any;
   private lastSecond = -1;
   customHours = 0;
@@ -128,7 +132,6 @@ export class FishTankComponent implements OnInit, OnDestroy {
       this.fishX = (1 - ((sec - 30) / 29.999)) * 80;
       this.fishFlipped = false;
     }
-    this.algaeHeight = ((hours + 1) / 24) * 80 + 10;
     this.stones = Array(Math.max(0, Math.floor(min))).fill(0);
   }
 
@@ -144,5 +147,10 @@ export class FishTankComponent implements OnInit, OnDestroy {
         return { ...b, y: Math.min(260, 60 + (elapsed / 1) * 200) };
       })
       .filter(b => b.y < 260);
+  }
+
+  algaeLeft(i: number): number {
+    if (this.algaeArray.length <= 1) return 50;
+    return 10 + (i * 80) / (this.algaeArray.length - 1);
   }
 }
