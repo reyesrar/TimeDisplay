@@ -57,7 +57,7 @@ const LOREM_WORDS = `Lorem ipsum dolor sit amet consectetur adipiscing elit sed 
       </div>
     </div>
   `,
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class MagicBookComponent implements OnInit, OnDestroy {
   displayHours = 0;

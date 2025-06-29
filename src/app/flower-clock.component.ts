@@ -72,7 +72,7 @@ import { FormsModule } from '@angular/forms';
       </svg>
     </div>
   `,
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class FlowerClockComponent implements OnInit, OnDestroy {
   displayHours = 0;

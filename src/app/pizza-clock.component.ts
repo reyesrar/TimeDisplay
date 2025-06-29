@@ -72,7 +72,7 @@ import { FormsModule } from '@angular/forms';
       </div>
     </div>
   `,
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class PizzaClockComponent implements OnInit, OnDestroy {
   displayHours = 0;

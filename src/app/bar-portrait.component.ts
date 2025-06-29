@@ -47,7 +47,7 @@ import { FormsModule } from '@angular/forms';
       <div class="bar-label">Seconds</div>
     </div>
   `,
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class BarPortraitComponent implements OnInit, OnDestroy {
   secondsHeight = 0;

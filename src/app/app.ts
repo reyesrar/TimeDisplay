@@ -98,7 +98,7 @@ import { PizzaClockComponent } from './pizza-clock.component';
       </div>
     </ng-template>
   `,
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
   showLogin = true;
