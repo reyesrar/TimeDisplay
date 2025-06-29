@@ -30,7 +30,7 @@ const LOREM_WORDS = `Lorem ipsum dolor sit amet consectetur adipiscing elit sed 
       <button type="button" (click)="resetToSystemTime()">Reset</button>
     </div>
     <div class="magic-book-display">
-      <div class="book">
+      <div class="magic-book">
         <div class="page left-page" [class.animate]="animateLeft">
           <div class="page-number" [class.magic]="isMagicPage(leftPageNumber)">
             {{ leftPageNumber + 1 }}
