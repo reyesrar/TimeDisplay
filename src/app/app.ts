@@ -10,6 +10,7 @@ import { MagicBookComponent } from './magic-book.component';
 import { TvClockComponent } from './tv-clock.component';
 import { BookshelfClockComponent } from './bookshelf-clock.component';
 import { WebBrowserClockComponent } from './web-browser-clock.component';
+import { PizzaClockComponent } from './pizza-clock.component';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,7 @@ import { WebBrowserClockComponent } from './web-browser-clock.component';
     TvClockComponent,
     BookshelfClockComponent,
     WebBrowserClockComponent,
+    PizzaClockComponent,
   ],
   template: `
     <div *ngIf="!authenticated; else mainApp" class="auth-container">
@@ -78,6 +80,7 @@ import { WebBrowserClockComponent } from './web-browser-clock.component';
           <option value="tv-clock">TV Clock</option>
           <option value="bookshelf-clock">Bookshelf Clock</option>
           <option value="web-browser-clock">Web Browser Clock</option>
+          <option value="pizza-clock">Pizza Clock</option>
         </select>
         <ng-container [ngSwitch]="selectedDisplay">
           <bar-portrait *ngSwitchCase="'bar-portrait'"></bar-portrait>
@@ -89,6 +92,7 @@ import { WebBrowserClockComponent } from './web-browser-clock.component';
           <tv-clock *ngSwitchCase="'tv-clock'"></tv-clock>
           <bookshelf-clock *ngSwitchCase="'bookshelf-clock'"></bookshelf-clock>
           <web-browser-clock *ngSwitchCase="'web-browser-clock'"></web-browser-clock>
+          <pizza-clock *ngSwitchCase="'pizza-clock'"></pizza-clock>
         </ng-container>
         <button class="logout-btn" (click)="logout()">Log out</button>
       </div>
