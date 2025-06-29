@@ -1,59 +1,16 @@
 # TimeDisplay
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+Time Display app for Frameworks course proyect#2 at Rafael Urdaneta University
 
-## Development server
+## Requirements
 
-To start a local development server, run:
+- 10+ ways to visualize time with intuitive indications for seconds, minutes and hours.
+- Initial time must be actual time. For demostration, it must be able to be alterated.
+- Must be possible to change between displays by any UI component.
+- Login/Register.
+- Is not avaliable to use external libraries that can create a component directly.
+- If necessary, extra variables can be added (day, month, year).
 
-```bash
-ng serve
-```
+## Additional
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Vercel link: <https://time-display-ashen.vercel.app>;
